@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext, useState } from 'react';
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AppContext from '../contextos/AppContext';
 
 const formularioVazio = () => {
@@ -8,7 +8,6 @@ const formularioVazio = () => {
 };
 
 const FormLogin = () => {
-  const {state} = useLocation();
   const navigate = useNavigate();
   const { sessaoService } = useContext(AppContext);
   const [form, setForm] = useState(formularioVazio());

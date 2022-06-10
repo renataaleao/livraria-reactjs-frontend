@@ -49,7 +49,7 @@ const FormLivro = () => {
           
         </p>
         <p>
-          <label>Número de Páginas: </label> 
+          <label>N°Páginas: </label> 
           <input type="number" name="numeroPaginas" value={form.numeroPaginas} onChange={setValor}/>            
         </p>
         <p>

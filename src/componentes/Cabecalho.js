@@ -18,7 +18,7 @@ const Cabecalho = () => {
 
   return (
     <header>
-      <h1>Cabeçalho da Aplicação</h1>
+      <h1>Livraria do Programador</h1>
       
       <nav>
         <Link to="/">Início</Link>

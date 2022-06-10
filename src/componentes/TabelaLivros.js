@@ -23,7 +23,6 @@ const TabelaLivros = () => {
         <td>{p.editora}</td>
         <td>{p.numeroPaginas}</td>
         <td>{sessaoService.logado && <button onClick={() => excluir(p)}>Excluir</button>}</td>
-        <td>{sessaoService.logado && <button onClick={() => editar(p)}>Editar</button>}</td>
       </tr>
     );
   };

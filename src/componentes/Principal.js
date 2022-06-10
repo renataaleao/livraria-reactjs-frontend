@@ -1,7 +1,7 @@
 import React from 'react';
 const Principal = () => {
     return (
-      <h1>Página Principal</h1>
+      <h1>Bem vindo à Livraria do Programador</h1>
     );
   };
   
