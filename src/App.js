@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
+import TabelaLivros from "./componentes/TabelaLivros";
+import FormLivro from "./componentes/FormLivro";
+import FormLogin from "./componentes/FormLogin";
+import Cabecalho from "./componentes/Cabecalho";
+import Principal from "./componentes/Principal";
+import PaginaNaoEncontrada from "./componentes/PaginaNaoEncontrada";
+import { AppProvider } from "./contextos/AppContext";
+import RotaSegura from "./componentes/seguranca/RotaSegura";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <Router>
+      <Cabecalho/>
+        <Routes>
+          <Route path="/" exact={true} element={<Principal/>}/>
+          <Route path="/login" element={<FormLogin/>}/>
+          <Route path="/Livros" element={<TabelaLivros/>}/>
+          <Route path="/novo_livro" element={
+            <RotaSegura redirectTo="/login" role="administrador">
+              <FormLivro/>
+            </RotaSegura>
+          }/>
+          <Route path="*" element={<PaginaNaoEncontrada/>}/>
+        </Routes>
+      </Router>
+    </AppProvider>
   );
 }
 
